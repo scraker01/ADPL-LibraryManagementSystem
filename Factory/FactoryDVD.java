@@ -1,11 +1,11 @@
 package Factory;
 
-public class FactoryDVD extends MainFactory {
+public class FactoryDVD extends Factory {
 
     @Override
-    public Item createItem() {
+    public ItemElement createItem(String judul, String pengarang,int fee) {
         // TODO Auto-generated method stub
-        return new DVD(null, null, null);
+        return new DVD(judul,pengarang,fee);
     }
     
 }

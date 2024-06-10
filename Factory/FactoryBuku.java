@@ -1,12 +1,12 @@
 
 package Factory;
 
-public class FactoryBuku extends MainFactory{
+public class FactoryBuku extends Factory{
 
     @Override
-    public Item createItem(String judul, String pengarang, String penerbit, String isbn) {
+    public ItemElement createItem(String judul, String pengarang,int fee) {
         // TODO Auto-generated method stub
-        return new Buku(null, null, null, null);
+        return new Buku(judul, pengarang,fee);
     }
     
 }
