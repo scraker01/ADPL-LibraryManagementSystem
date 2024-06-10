@@ -20,6 +20,7 @@ public class Section implements ItemElement {
     @Override
     public void accept(Visitor visitor) {
         // TODO Auto-generated method stub
+        System.out.println(sectionCode);
         for(ItemElement items : list){
             items.accept(visitor);
         }
@@ -50,6 +51,19 @@ public class Section implements ItemElement {
     @Override
     public String toString() {
         return "Section [list=" + list + ", sectionCode=" + sectionCode + "]\n";
+    }
+
+    @Override
+    public void add(ItemElement item) {
+        // TODO Auto-generated method stub
+        list.add(item);
+    }
+
+    @Override
+    public void remove(ItemElement item) {
+        // TODO Auto-generated method stub
+
+        list.remove(item);
     }
     
     

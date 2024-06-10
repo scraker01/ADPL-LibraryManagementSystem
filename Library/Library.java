@@ -27,11 +27,10 @@ public class Library implements Visitor {
     }
 
     public void visitAllInstances(){
-
+        System.out.println("\n"+section.getSectionCode());
         for(ItemElement item: section.getList()){
             item.accept(this);
             
-            // System.out.println(item);
         }
     }
 
@@ -45,6 +44,18 @@ public class Library implements Visitor {
     public void visitDVD(DVD dvd) {
         System.out.println(dvd.toString());
         
+    }
+
+    public void add(ItemElement item){
+        this.section.add(item);
+    }
+
+    public void remove(ItemElement item){
+        this.section.remove(item);
+    }
+
+    public Section getSpecificSection(int sectionIdx){
+        return (Section)this.section.getList().get(sectionIdx);
     }
     
 }

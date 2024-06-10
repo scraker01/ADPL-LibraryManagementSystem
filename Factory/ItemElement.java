@@ -6,4 +6,7 @@ public interface ItemElement {
     public void input();                    // Factory
     public void accept(Visitor Visitor);         //Visitor accept
     public int calculateFee();          // Composite
+
+    public void add(ItemElement item);
+    public void remove(ItemElement item);
 }

@@ -2,7 +2,7 @@ package Factory;
 
 import Visitor.Visitor;
 
-public class Buku extends Item implements Visitor{
+public class Buku extends Item{
     
 
     public Buku(String judul, String pengarang, int fee) {
@@ -90,11 +90,22 @@ public class Buku extends Item implements Visitor{
 
     @Override
     public void visitDVD(DVD dvd) {
+        
+    }
+
+    @Override
+    public void add(ItemElement item) {
         // TODO Auto-generated method stub
         
     }
 
-    
+    @Override
+    public void remove(ItemElement item) {
+        // TODO Auto-generated method stub
+        
+    }
+
+        
     
         
 }

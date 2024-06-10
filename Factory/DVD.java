@@ -5,6 +5,7 @@ import Visitor.Visitor;
 public class DVD extends Item {
 
     private String tipe;
+
     public DVD(String judul, String pengarang, int fee) {
         super(judul, pengarang, fee);
         //TODO Auto-generated constructor stub
@@ -73,16 +74,13 @@ public class DVD extends Item {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return String.format("DVD:: Judul=%s ISBN=%s Tipe=%s ", judul,pengarang,tipe);
+        return String.format("DVD:: Judul=%s Pengarang=%s Tipe=%s ", judul,pengarang,tipe);
     }
 
 
 
     @Override
-    public void visitBuku(Buku buku) {
-        // TODO Auto-generated method stub
-        
-    }
+    public void visitBuku(Buku buku) {}
 
 
 
@@ -91,8 +89,16 @@ public class DVD extends Item {
         // TODO Auto-generated method stub
         System.out.println(this.toString());
     }
-    
-    
 
+    @Override
+    public void add(ItemElement item) {}
+
+
+    
+    @Override
+    public void remove(ItemElement item) {}
+    
+    
+    
 
 }
