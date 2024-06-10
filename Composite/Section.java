@@ -46,11 +46,7 @@ public class Section implements ItemElement {
     public String getSectionCode() {
         return sectionCode;
     }
-
-    public Section getSection(){
-        return this;
-    }
-
+    
     @Override
     public String toString() {
         return "Section [list=" + list + ", sectionCode=" + sectionCode + "]\n";

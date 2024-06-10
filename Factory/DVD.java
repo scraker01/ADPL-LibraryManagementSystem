@@ -73,7 +73,7 @@ public class DVD extends Item {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return String.format("Buku:: Judul=%s ISBN=%s Tipe=%s ", judul,pengarang,tipe);
+        return String.format("DVD:: Judul=%s ISBN=%s Tipe=%s ", judul,pengarang,tipe);
     }
 
 
