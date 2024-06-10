@@ -1,6 +1,10 @@
 package Factory;
 
-public interface Item {
-    public static final String judul = "";
-    public static final String penerbit = "";
+public abstract class Item {
+    public String judul;
+    public String pengarang;
+
+    public abstract String getJudul();
+    public abstract String getPengarang() ;
+    
 }
