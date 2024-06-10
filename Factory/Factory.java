@@ -4,7 +4,7 @@ public abstract class Factory {
     
     public ItemElement orderItem(String judul, String pengarang,int fee){
         ItemElement item = createItem(judul,pengarang,fee);
-        // item.input();
+        item.input();
         return item;
     }
 

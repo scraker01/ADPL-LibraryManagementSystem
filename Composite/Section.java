@@ -12,18 +12,17 @@ public class Section implements ItemElement {
 
     private String sectionCode;
 
-    public Section(ItemElement... items){
+    public Section(String sectionCode, ItemElement... items){
+        this.sectionCode = sectionCode;
         list.addAll(Arrays.asList(items));
     }
 
-    // public void add(ItemElement... items){
-    //     list.addAll(Arrays.asList(items));
-    // }
-
     @Override
-    public int accept(Visitor visitor) {
+    public void accept(Visitor visitor) {
         // TODO Auto-generated method stub
-        return 0;
+        for(ItemElement items : list){
+            items.accept(visitor);
+        }
     }
 
     @Override
@@ -40,5 +39,23 @@ public class Section implements ItemElement {
         
     }
 
+    public List<ItemElement> getList() {
+        return list;
+    }
+
+    public String getSectionCode() {
+        return sectionCode;
+    }
+
+    public Section getSection(){
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Section [list=" + list + ", sectionCode=" + sectionCode + "]\n";
+    }
+    
+    
     
 }

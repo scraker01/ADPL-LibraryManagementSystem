@@ -2,7 +2,7 @@ package Factory;
 
 import Visitor.Visitor;
 
-public class DVD extends Item implements ItemElement{
+public class DVD extends Item {
 
     private String tipe;
     public DVD(String judul, String pengarang, int fee) {
@@ -39,9 +39,10 @@ public class DVD extends Item implements ItemElement{
     }
 
     @Override
-    public int accept(Visitor visitor) {
+    public void accept(Visitor visitor) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'accept'");
+        // throw new UnsupportedOperationException("Unimplemented method 'accept'");
+        visitor.visitDVD(this);
     }
 
     public String getTipe() {
@@ -73,6 +74,22 @@ public class DVD extends Item implements ItemElement{
     public String toString() {
         // TODO Auto-generated method stub
         return String.format("Buku:: Judul=%s ISBN=%s Tipe=%s ", judul,pengarang,tipe);
+    }
+
+
+
+    @Override
+    public void visitBuku(Buku buku) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+
+    @Override
+    public void visitDVD(DVD dvd) {
+        // TODO Auto-generated method stub
+        System.out.println(this.toString());
     }
     
     

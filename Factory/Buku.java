@@ -2,7 +2,7 @@ package Factory;
 
 import Visitor.Visitor;
 
-public class Buku extends Item implements ItemElement {
+public class Buku extends Item implements Visitor{
     
 
     public Buku(String judul, String pengarang, int fee) {
@@ -23,9 +23,9 @@ public class Buku extends Item implements ItemElement {
     }
 
     @Override
-    public int accept(Visitor visitor) {
+    public void accept(Visitor visitor) {
         // TODO Auto-generated method stub
-        return 0;
+        visitor.visitBuku(this);
     }
 
 
@@ -82,6 +82,19 @@ public class Buku extends Item implements ItemElement {
         return getFee();    
     }
 
+    @Override
+    public void visitBuku(Buku buku) {
+        // TODO Auto-generated method stub
+        System.out.println(this.toString());
+    }
+
+    @Override
+    public void visitDVD(DVD dvd) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    
     
         
 }

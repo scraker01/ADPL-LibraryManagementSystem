@@ -1,6 +1,8 @@
 package Factory;
 
-public abstract class Item implements ItemElement {
+import Visitor.Visitor;
+
+public abstract class Item implements ItemElement, Visitor {
     public String judul;
     public String pengarang;
     public int fee;
