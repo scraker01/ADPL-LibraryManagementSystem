@@ -2,6 +2,9 @@ package Factory;
 
 import Visitor.Visitor;
 
+/*
+ * Konkret Objek yang meng-inherit Item (ItemElement+Visitor)
+ */
 public class DVD extends Item {
 
     private String tipe;
@@ -12,7 +15,7 @@ public class DVD extends Item {
     }
 
 
-
+    //
     @Override
     public int calculateFee() {
         // TODO Auto-generated method stub

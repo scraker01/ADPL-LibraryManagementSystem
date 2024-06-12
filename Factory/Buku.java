@@ -10,16 +10,11 @@ public class Buku extends Item{
         //TODO Auto-generated constructor stub
     }
 
-
-    private String penerbit;
-    private String isbn;
-
     
     @Override
     public void input() {
         // TODO Auto-generated method 
-        setPenerbit("[penerbit]");
-        setIsbn("[0000]");
+        
     }
 
     @Override
@@ -39,15 +34,8 @@ public class Buku extends Item{
         return this.pengarang;
     }
 
-    public String getPenerbit() {
-        return this.penerbit;
-    }
     public int getFee(){
         return this.fee;
-    }
-
-    public String getIsbn() {
-        return this.isbn;
     }
 
     public void setPengarang(String pengarang){
@@ -58,14 +46,6 @@ public class Buku extends Item{
         this.judul = judul;
     }
 
-    public void setPenerbit(String penerbit) {
-        this.penerbit = penerbit;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
     public void setFee(int fee) {
         this.fee = fee;
     }
@@ -73,7 +53,7 @@ public class Buku extends Item{
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return String.format("Buku:: Judul=%s ISBN=%s Pengarang=%s Penerbit=%s ", judul,isbn,pengarang,penerbit);
+        return String.format("Buku:: Judul=%s Pengarang=%s ", judul,pengarang);
     }
 
     @Override
