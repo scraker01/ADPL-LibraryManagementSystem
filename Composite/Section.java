@@ -8,6 +8,7 @@ import Factory.ItemElement;
 import Visitor.Visitor;
 
 public class Section implements ItemElement {
+    //List yang menyimpan seluruh ItemElemen dan section lainnya
     private final List<ItemElement> list = new ArrayList<>();    
 
     private String sectionCode;
@@ -31,7 +32,7 @@ public class Section implements ItemElement {
         }
     }
 
-    //Stream untuk mendapatkan setiap item yang berada pada list
+    //Composite: Stream untuk mendapatkan setiap item yang berada pada list
     @Override
     public int calculateFee() {
         // TODO Auto-generated method stub
