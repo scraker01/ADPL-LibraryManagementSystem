@@ -26,15 +26,30 @@ public class Client {
         Library lib = new Library();
         lib.setupSection("Section A",
             new Section(
-                "Section A-1",factoryBuku.orderItem("A","PengarangA",1000)
+                "Section A-1",
+                factoryBuku.orderItem("The Catcher in the Rye", "J.D. Salinger", 2800),
+                factoryBuku.orderItem("The Hobbit", "J.R.R. Tolkien", 3200),
+                factoryBuku.orderItem("Fahrenheit 451", "Ray Bradbury", 2600),
+                factoryBuku.orderItem("Brave New World", "Aldous Huxley", 3000),
+                factoryBuku.orderItem("The Road", "Cormac McCarthy", 3500),
+                factoryDvd.orderItem("Avatar", "James Cameron", 5000),
+                factoryDvd.orderItem("Pulp Fiction", "Quentin Tarantino", 4800),
+                factoryDvd.orderItem("The Shawshank Redemption", "Frank Darabont", 4500),
+                factoryDvd.orderItem("Fight Club", "David Fincher", 4200),
+                factoryDvd.orderItem("Forrest Gump", "Robert Zemeckis", 5300)
             ),
             new Section(
                 "Section A-2",
-                factoryBuku.orderItem("B", "PengarangB", 2000),
-                factoryBuku.orderItem("C", "PengarangC", 2000),
-                factoryDvd.orderItem("DVDA", "PengarangA", 5000),
-                factoryDvd.orderItem("DVDB", "PengarangB", 3000),
-                factoryDvd.orderItem("DVDC", "PengarangC", 2000)
+                factoryBuku.orderItem("To Kill a Mockingbird", "Harper Lee", 3000),
+                factoryBuku.orderItem("1984", "George Orwell", 2500),
+                factoryBuku.orderItem("Pride and Prejudice", "Jane Austen", 2000),
+                factoryBuku.orderItem("The Great Gatsby", "F. Scott Fitzgerald", 3500),
+                factoryBuku.orderItem("Moby Dick", "Herman Melville", 4000),
+                factoryDvd.orderItem("Inception", "Christopher Nolan", 5000),
+                factoryDvd.orderItem("The Matrix", "Lana Wachowski, Lilly Wachowski", 4500),
+                factoryDvd.orderItem("Interstellar", "Christopher Nolan", 5500),
+                factoryDvd.orderItem("The Lord of the Rings", "Peter Jackson", 6000),
+                factoryDvd.orderItem("The Dark Knight", "Christopher Nolan", 7000)
             )
         );
 
