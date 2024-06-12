@@ -110,7 +110,7 @@ public class Client {
                     System.out.println("Total : "+lib.calcSectionFees());
                     break;
                 case 5:
-                    System.out.println("Exiting...");
+                    System.out.println("Thank You!!");
                     sc.close();
                     return;
                 default:
