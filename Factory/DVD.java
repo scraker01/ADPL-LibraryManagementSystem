@@ -7,15 +7,47 @@ import Visitor.Visitor;
  */
 public class DVD extends Item {
 
-    private String tipe;
-
     public DVD(String judul, String pengarang, int fee) {
         super(judul, pengarang, fee);
         //TODO Auto-generated constructor stub
     }
 
 
-    //
+    //Visitor: memanggil method objek konkret
+    @Override
+    public void accept(Visitor visitor) {
+        // TODO Auto-generated method stub
+        // throw new UnsupportedOperationException("Unimplemented method 'accept'");
+        visitor.visitDVD(this);
+    }
+
+    //Visitor : method print keterangan objek DVD
+    @Override
+    public void visitDVD(DVD dvd) {
+        // TODO Auto-generated method stub
+        System.out.println(this.toString());
+    }
+
+
+    /*
+     * Setter & Getter
+     */
+    //=======================================================
+    public void setPengarang(String pengarang){
+        this.pengarang =pengarang;
+    }
+
+    public void setJudul(String judul){
+        this.judul = judul;
+    }
+
+    public int getFee(){
+        return this.fee;
+    }
+
+    public void setFee(int fee) {
+        this.fee = fee;
+    }
     @Override
     public int calculateFee() {
         // TODO Auto-generated method stub
@@ -35,73 +67,30 @@ public class DVD extends Item {
         return this.pengarang;
     }
     
-
-    @Override
-    public void input() {
-        // TODO Auto-generated method stub
-        setTipe("[tipe]");
-    }
-
-    @Override
-    public void accept(Visitor visitor) {
-        // TODO Auto-generated method stub
-        // throw new UnsupportedOperationException("Unimplemented method 'accept'");
-        visitor.visitDVD(this);
-    }
-
-    public String getTipe() {
-        return this.tipe;
-    }
-
-    public void setPengarang(String pengarang){
-        this.pengarang =pengarang;
-    }
-
-    public void setJudul(String judul){
-        this.judul = judul;
-    }
-
-    public DVD setTipe(String tipe) {
-        this.tipe = tipe;
-        return this;
-    }
-
-    public int getFee(){
-        return this.fee;
-    }
-
-    public void setFee(int fee) {
-        this.fee = fee;
-    }
-
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return String.format("DVD:: Judul=%s Pengarang=%s Tipe=%s ", judul,pengarang,tipe);
+        return String.format("DVD:: Judul=%s Pengarang=%s", judul,pengarang);
     }
+    //=======================================================
 
 
+    //Method kosong untuk keperluan implementasi
+    //===================================================
+
+    @Override
+    public void input() {}
 
     @Override
     public void visitBuku(Buku buku) {}
-
-
-
-    @Override
-    public void visitDVD(DVD dvd) {
-        // TODO Auto-generated method stub
-        System.out.println(this.toString());
-    }
-
+   
     @Override
     public void add(ItemElement item) {}
 
-
-    
     @Override
     public void remove(ItemElement item) {}
     
-    
+    //===================================================
     
 
 }

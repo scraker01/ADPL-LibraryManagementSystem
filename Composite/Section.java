@@ -12,20 +12,26 @@ public class Section implements ItemElement {
 
     private String sectionCode;
 
+    //Constructor yang diimplementasikan via setupSection dari Library
     public Section(String sectionCode, ItemElement... items){
         this.sectionCode = sectionCode;
         list.addAll(Arrays.asList(items));
     }
 
+    //Visitor : Accept paramater visitor dan masuk ke level yang lebih dalam untuk setiap
+    // item yang berupa itemElement
     @Override
     public void accept(Visitor visitor) {
-        // TODO Auto-generated method stub
+        // Print section code
         System.out.println(sectionCode);
+
+        //Memanggil node/leaf dari level 2 kebawah dst nya
         for(ItemElement items : list){
             items.accept(visitor);
         }
     }
 
+    //Stream untuk mendapatkan setiap item yang berada pada list
     @Override
     public int calculateFee() {
         // TODO Auto-generated method stub
@@ -34,12 +40,10 @@ public class Section implements ItemElement {
                     .sum();
     }
 
-    @Override
-    public void input() {
-        // TODO Auto-generated method stub
-        
-    }
-
+   /*
+    * Getter & Setter
+    */
+    //================================================================================
     public List<ItemElement> getList() {
         return list;
     }
@@ -52,20 +56,24 @@ public class Section implements ItemElement {
     public String toString() {
         return "Section [list=" + list + ", sectionCode=" + sectionCode + "]\n";
     }
+        //================================================================================
 
+    //Method untuk add ItemElement pada section
     @Override
     public void add(ItemElement item) {
         // TODO Auto-generated method stub
         list.add(item);
     }
 
+    //Method untuk menghapus ItemElement
     @Override
     public void remove(ItemElement item) {
         // TODO Auto-generated method stub
-
         list.remove(item);
     }
     
-    
+    @Override
+    public void input() {}
+
     
 }

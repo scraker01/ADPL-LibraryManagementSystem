@@ -12,7 +12,9 @@ public abstract class Item implements ItemElement, Visitor {
     public String pengarang;
     public int fee;
   
-      
+    /*
+     * Base constructor yang akan diimplementasikan pada objek konkret
+     */
     public Item(String judul, String pengarang,int fee) {
         //TODO Auto-generated constructor stub
         this.judul = judul;

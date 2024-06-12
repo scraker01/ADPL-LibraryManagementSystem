@@ -11,19 +11,25 @@ public class Buku extends Item{
     }
 
     
-    @Override
-    public void input() {
-        // TODO Auto-generated method 
-        
-    }
-
+    //Visitor: Memanggil method visit dari objek konkret
     @Override
     public void accept(Visitor visitor) {
         // TODO Auto-generated method stub
         visitor.visitBuku(this);
     }
 
+    //Visitor: Method untuk print keterangan objek Buku
+    @Override
+    public void visitBuku(Buku buku) {
+        // TODO Auto-generated method stub
+        System.out.println(this.toString());
+    }
 
+    /*
+     * Getter & Setter
+     */
+
+     //====================================================
     @Override
     public String getJudul() {
         return this.judul;
@@ -61,30 +67,24 @@ public class Buku extends Item{
         // TODO Auto-generated method stub
         return getFee();    
     }
+     //====================================================
+
+
+    //  Method kosong untuk keperluan Override
+    //=============================================
+    @Override
+    public void visitDVD(DVD dvd) {}
 
     @Override
-    public void visitBuku(Buku buku) {
-        // TODO Auto-generated method stub
-        System.out.println(this.toString());
-    }
+    public void add(ItemElement item) {}
 
     @Override
-    public void visitDVD(DVD dvd) {
-        
-    }
+    public void remove(ItemElement item) {}
 
     @Override
-    public void add(ItemElement item) {
-        // TODO Auto-generated method stub
-        
-    }
+    public void input() {}
 
-    @Override
-    public void remove(ItemElement item) {
-        // TODO Auto-generated method stub
-        
-    }
-
+    //=============================================
         
     
         

@@ -1,29 +1,28 @@
 package Library;
 
-import java.util.List;
+
 import java.util.Scanner;
 
 import Composite.Section;
-import Factory.Buku;
-import Factory.DVD;
 import Factory.FactoryBuku;
 import Factory.FactoryDVD;
 import Factory.ItemElement;
-import Visitor.Visitor;
+
 
 public class Client {
     public static void main(String[] args) {
         int sectionIdx;
+
+        //Instansiasi Factory Konkret
         FactoryBuku factoryBuku = new FactoryBuku(); 
         FactoryDVD factoryDvd = new FactoryDVD();
 
-        
         Scanner sc = new Scanner(System.in);
         
-
-        // System.out.println(buku);
-
+        //Instansiasi Library
         Library lib = new Library();
+        
+        //Setup Composite Section dengan data dummy
         lib.setupSection("Section A",
             new Section(
                 "Section A-1",
@@ -53,19 +52,15 @@ public class Client {
             )
         );
 
-        // lib.setupSection("Section B", new Section("Code 1", new Section("Code 1-2", )));
-
-        // int totalFee = lib.calcSectionFees();
-        // System.out.println(totalFee);
-   
-        // lib.visitAllInstances();
+        //CLI atau interface untuk user
         while (true) {
             System.out.println("Choose an action:");
             System.out.println("1. Add a book");
             System.out.println("2. Add a DVD");
             System.out.println("3. Display library structure");
-            System.out.println("4. Calculate cost");
-            System.out.println("5. Exit");
+            System.out.println("4. Calculate all cost");
+            System.out.println("5. Calculate specific cost");
+            System.out.println("6. Exit\n");
 
             int choice = sc.nextInt();
             sc.nextLine();  // Consume newline
@@ -110,7 +105,14 @@ public class Client {
                     System.out.println("Total : "+lib.calcSectionFees());
                     break;
                 case 5:
-                    System.out.println("Thank You!!");
+                    System.out.print("Which section's cost ? \n");
+                    System.out.println("1. Section A-1");
+                    System.out.println("2. Section A-2");
+                    sectionIdx = sc.nextInt()-1;
+                    System.out.println("Total : "+lib.getSpecificSection(sectionIdx).calculateFee());
+                    break;
+                case 6:
+                    System.out.println("Thank You!!!");
                     sc.close();
                     return;
                 default:
